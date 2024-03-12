@@ -1,0 +1,67 @@
+Create a function to simplify unix style absolute paths
+- 1 parameter: string path
+- returns string
+
+Examples:
+
+input
+/a/
+/a/b/../c
+#/a/b/../c/
+/..
+#/../b
+/a/b/./c
+
+output
+/a
+/a/c
+/
+#/b
+/a/b/c
+
+
+Please build a function that performs this operation and then try:
+1: /a/b/../../../c/d
+2: /./a/./b/.c/
+
+case 1: last trail `/`
+2: .. means 1 step up
+3: . means current directory
+
+
+
+
+
+function sanitize(input){
+
+  loop=true;
+
+  while(loop){
+    control=false
+
+    if (input.endsWisth("/")){
+      input = input[0, len(input)-1]
+      control=true
+    }
+
+    if (input.startWisth("/..")){
+      input = input.replaceFirst("/..", "/")
+      control=true
+    }
+
+    if (input.contains("//")){
+      input = input.replaceFirst("//", "/")
+      control=true
+    }
+
+    if (input.contains("/./")){
+      input = input.replace("/..", "")
+      control=true
+    }
+   
+    loop=control
+  }
+
+
+  return input
+}
