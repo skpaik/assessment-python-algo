@@ -9,6 +9,7 @@ class Solutions:
             for i in range(2, n + 1):
                 g.append(g[i - 1] - g[i - 2])
             return g[n - 1] - g[n - 2]
+
     def gibonacci(self, n, m, k):
         # Helper function to check if two players have played against each other in at least one round
 

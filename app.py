@@ -1,4 +1,4 @@
-from algos import Solutions
+from algos import Algo
 
 if __name__ == '__main__':
-    Solutions().start_solutions()
+    Algo().start_solutions()

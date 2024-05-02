@@ -1,15 +1,16 @@
-use_cases = [
-    {
-        "input_data": ['GeeksForGeeks', 'QuizGeeks'],
-        "output_data": ["Geeks", 5]
-    },{
-        "input_data": ['GeeksForGeeksQuiz', 'QuizGeeks'],
-        "output_data": ["Geeks", 5]
-    },
-]
+
 
 
 class SolutionsTechJays1:
+    use_cases = [
+        {
+            "input_data": ['GeeksForGeeks', 'QuizGeeks'],
+            "output_data": ["Geeks", 5]
+        }, {
+            "input_data": ['GeeksForGeeksQuiz', 'QuizGeeks'],
+            "output_data": ["Geeks", 5]
+        },
+    ]
     def method_body(self, input_data):
         str1, str2 = input_data[0], input_data[1]
         # Initialize the matrix with zeros
@@ -23,7 +24,7 @@ class SolutionsTechJays1:
         for i in range(1, len(str1) + 1):
             for j in range(1, len(str2) + 1):
                 if str1[i - 1] == str2[j - 1]:
-                    dp[i][j] = dp[i-1][j-1] + 1
+                    dp[i][j] = dp[i - 1][j - 1] + 1
 
                     # Update maximum length and end position
                     if dp[i][j] > max_length:
@@ -37,7 +38,3 @@ class SolutionsTechJays1:
         longest_common_substring = str1[start_pos:end_pos]
 
         return [longest_common_substring, max_length]
-
-    def start_method(self):
-        for each_case in use_cases:
-            print("Result = " + str(self.method_body(each_case.get("input_data")) == each_case.get("output_data")))

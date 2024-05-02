@@ -21,8 +21,8 @@ collections_Message = {
 
     },
     "date_time": "",
-    #"gps_coordinates": [],
-    #"state": "draft/sent/received/viewed/"
+    # "gps_coordinates": [],
+    # "state": "draft/sent/received/viewed/"
 }
 
 collections_Thread = {
@@ -55,9 +55,3 @@ abcObj.state="received_seen";
         
         })
 '''
-
-
-
-
-
-

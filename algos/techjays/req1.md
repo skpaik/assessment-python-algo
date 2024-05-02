@@ -1,7 +1,6 @@
-
 '''
-# Method Details
 
+# Method Details
 
 animals will always be arranged in a straight line
 
